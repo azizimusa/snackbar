@@ -10,14 +10,14 @@
 
 
     <js-module src="www/snackbar.js" name="SnackBarPlugin">
-        <clobbers target="window.SnackBarPlugin" />
+        <clobbers target="window.plugins.snackbarplugin" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SnackBarPlugin">
-                <param name="android-package" value="org.apache.cordova.snackbar"/>
+                <param name="android-package" value="org.apache.cordova.snackbar.SnackBarPlugin"/>
             </feature>
         </config-file>
 
