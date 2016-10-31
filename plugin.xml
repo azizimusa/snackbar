@@ -10,7 +10,7 @@
 
 
     <js-module src="www/snackbar.js" name="SnackBarPlugin">
-        <clobbers target="SnackBarPlugin" />
+        <clobbers target="window.SnackBarPlugin" />
     </js-module>
 
     <!-- android -->
