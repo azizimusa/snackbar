@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="org.apache.cordova.snackbar"
+        version="2.1.4">
+    <name>SnackBarPlugin</name>
+    <description>Cordova Plugin that displays android Snackbar</description>
+    <license>MIT</license>
+    <keywords>cordova,material design,snackbar</keywords>
+
+
+    <js-module src="www/snackbar.js" name="SnackBarPlugin">
+        <clobbers target="SnackBarPlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SnackBarPlugin">
+                <param name="android-package" value="org.apache.cordova.snackbar"/>
+            </feature>
+        </config-file>
+
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
+            <activity android:name="MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar" />
+        </edit-config>
+
+        <framework src="com.android.support:appcompat-v7:+" />
+        <framework src="com.android.support:design:+" />
+
+        <source-file src="src/android/SnackBarPlugin.java" target-dir="src/org/apache/cordova/snackbar" />
+    </platform>
+</plugin>
