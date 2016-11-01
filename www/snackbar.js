@@ -14,6 +14,19 @@ module.exports = {
                 'delay':"-2",
                 'action': action
             }]);
+    },
+    snackBarLong: function(msg, action, longClick){
+
+        exec(
+            longClick, 
+            statusCallback, 
+            "SnackBarPlugin", 
+            "snackBar",
+            [{
+                'msg':msg,
+                'delay':"0",
+                'action': action
+            }]);
     }
 
 };
