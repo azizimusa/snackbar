@@ -1,57 +1,26 @@
-function showSnackBarInfinite(msg, action, clickCallback){
+var exec = require('cordova/exec');
 
-    cordova.exec(
-                clickCallback,
-                statusCallback,
-                "SnackBarPlugin", //Service Name
-                "snackBar", // Action Name
-                [{
+module.exports = {
 
-                    'msg': msg,
-                    'delay': "-2",
-                    'action': action
+    snackBarInfinite: function(msg, action){
 
-                }]
-            )
+        exec(
+            clickCallback, 
+            statusCallback, 
+            "SnackBarPlugin", 
+            "snackBar",
+            [{
+                'msg':msg,
+                'delay':"-2",
+                'action': action
+            }]);
+    },
 
-}
+    statusCallback: function(data){
+        console.log("receive statusCallback : " + data);
+    },
+    clickCallback: function(data){
+        console.log("receive clickCallback : " + data);
+    }
 
-function showSnackBarLong(msg, action, clickCallback){
-
-    cordova.exec(
-                clickCallback,
-                statusCallback,
-                "SnackBarPlugin", //Service Name
-                "snackBar", // Action Name
-                [{
-
-                    'msg': msg,
-                    'delay': "0",
-                    'action': action
-
-                }]
-            )
-
-}
-
-function showSnackBarShort(msg, action, clickCallback){
-
-    cordova.exec(
-                clickCallback,
-                statusCallback,
-                "SnackBarPlugin", //Service Name
-                "snackBar", // Action Name
-                [{
-
-                    'msg': msg,
-                    'delay': "1",
-                    'action': action
-
-                }]
-            )
-
-}
-
-function statusCallback(data){
-    console.log("Status : " + data);
-}
+};

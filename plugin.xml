@@ -9,8 +9,8 @@
     <keywords>cordova,material design,snackbar</keywords>
 
 
-    <js-module src="www/snackbar.js" name="SnackBarPlugin">
-        <clobbers target="window.plugins.snackbarplugin" />
+    <js-module src="www/snackbar.js" name="snackbarplugin">
+        <clobbers target="window.snackbarplugin" />
     </js-module>
 
     <!-- android -->
