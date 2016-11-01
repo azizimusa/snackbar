@@ -14,13 +14,14 @@ module.exports = {
                 'delay':"-2",
                 'action': action
             }]);
-    },
-
-    statusCallback: function(data){
-        console.log("receive statusCallback : " + data);
-    },
-    clickCallback: function(data){
-        console.log("receive clickCallback : " + data);
     }
 
 };
+
+function statusCallback(data){
+        console.log("receive statusCallback : " + data);
+    }
+
+function clickCallback(data){
+        console.log("receive clickCallback : " + data);
+    }
